@@ -24,6 +24,7 @@ import java.sql.Array;
 import java.sql.Blob;
 import java.sql.CallableStatement;
 import java.sql.Clob;
+import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.NClob;
 import java.sql.PreparedStatement;
@@ -46,7 +47,7 @@ import java.util.concurrent.Executor;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-class Connection implements java.sql.Connection
+class ConnectionImpl implements Connection
 {
     @Override
     public <T> T unwrap(Class<T> iface) throws SQLException

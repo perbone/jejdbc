@@ -30,6 +30,7 @@ import java.sql.Clob;
 import java.sql.Date;
 import java.sql.NClob;
 import java.sql.ParameterMetaData;
+import java.sql.PreparedStatement;
 import java.sql.Ref;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -48,7 +49,7 @@ import java.util.Calendar;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-class PreparedStatement extends AbstractStatement implements java.sql.PreparedStatement
+class PreparedStatementImpl extends AbstractStatement implements PreparedStatement
 {
     @Override
     public ResultSet executeQuery() throws SQLException

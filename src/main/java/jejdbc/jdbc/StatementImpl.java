@@ -28,6 +28,6 @@ package jejdbc.jdbc;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-class Statement extends AbstractStatement implements java.sql.Statement
+class StatementImpl extends AbstractStatement
 {
 }

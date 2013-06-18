@@ -30,6 +30,7 @@ import java.sql.Clob;
 import java.sql.Date;
 import java.sql.NClob;
 import java.sql.Ref;
+import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.RowId;
 import java.sql.SQLException;
@@ -49,7 +50,7 @@ import java.util.Map;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-class ResultSet implements java.sql.ResultSet
+class ResultSetImpl implements ResultSet
 {
     @Override
     public <T> T unwrap(Class<T> iface) throws SQLException

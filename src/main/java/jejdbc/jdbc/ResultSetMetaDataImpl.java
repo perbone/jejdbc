@@ -20,6 +20,7 @@
 
 package jejdbc.jdbc;
 
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 /**
@@ -30,7 +31,7 @@ import java.sql.SQLException;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-class ResultSetMetaData implements java.sql.ResultSetMetaData
+class ResultSetMetaDataImpl implements ResultSetMetaData
 {
     @Override
     public <T> T unwrap(Class<T> iface) throws SQLException

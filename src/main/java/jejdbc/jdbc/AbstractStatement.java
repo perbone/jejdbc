@@ -24,6 +24,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
+import java.sql.Statement;
 
 /**
  * This is the {@link java.sql.Statement} interface abstract implementation.
@@ -33,7 +34,7 @@ import java.sql.SQLWarning;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-abstract class AbstractStatement implements java.sql.Statement
+abstract class AbstractStatement implements Statement
 {
     @Override
     public <T> T unwrap(Class<T> iface) throws SQLException
