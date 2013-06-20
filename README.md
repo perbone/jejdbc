@@ -1,18 +1,20 @@
 jejdbc
 ======
 
+> WIP (heavily updated so you can expect constants changes - no commitment with feature freezing at this moment)
+
 A JDBC 4.1 compliant driver for Berkeley DB Java Edition
 
 ## Features
 
-* Read-Write from local database
-* Read-Write from local master database
-* Read-Only from local slave database
-* Write-Forwarding to remote master database
-* Server mode for local database
-* Server mode for replicated database
-* Client mode for remote database (can be local or replicated)
-* Proxy mode for remote database (can be local or replicated)
+* Read-Write from/to local database (standalone environment)
+* Read-Write from/to local master database (HA environment)
+* Read-Only from local replica database (HA environment)
+* Write-Forwarding to remote master database (HA environment)
+* Server mode for local database (standalone environment)
+* Server mode for local master/replica database (HA environment)
+* Client mode for remote database (standalone/HA environment)
+* Proxy mode for remote database (standalone/HA environment)
 
 ## Issues and Support
 
