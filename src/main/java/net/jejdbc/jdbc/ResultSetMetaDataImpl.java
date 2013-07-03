@@ -18,7 +18,7 @@
  * along with JEJDBC. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package jejdbc.jdbc;
+package net.jejdbc.jdbc;
 
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;

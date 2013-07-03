@@ -18,7 +18,7 @@
  * along with JEJDBC. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package jejdbc.jdbc;
+package net.jejdbc.jdbc;
 
 /**
  * This is the {@link java.sql.Statement} interface implementation.
