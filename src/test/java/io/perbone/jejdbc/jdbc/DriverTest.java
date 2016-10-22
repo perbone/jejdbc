@@ -18,8 +18,9 @@
  * along with JEJDBC. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.jejdbc.jdbc;
+package io.perbone.jejdbc.jdbc;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -43,7 +44,7 @@ public class DriverTest
 {
     private static final String URL_SAMPLE = "jdbc:jejdbc://localhost:5101";
     private static final String URL_SAMPLE_WRONG = "jdbc:blah://localhost:5101";
-    private static final String DRIVER_CLASS_PATH = "net.jejdbc.jdbc.Driver";
+    private static final String DRIVER_CLASS_PATH = "io.perbone.jejdbc.jdbc.Driver";
 
     @BeforeClass
     public static void initialSetup()
@@ -72,7 +73,7 @@ public class DriverTest
             Driver driver = DriverManager.getDriver(URL_SAMPLE);
 
             assertNotNull(driver);
-            assertTrue(driver.getClass().equals(net.jejdbc.jdbc.Driver.class));
+            assertTrue(driver.getClass().equals(io.perbone.jejdbc.jdbc.Driver.class));
         }
         catch (SQLException e)
         {
@@ -96,10 +97,10 @@ public class DriverTest
     {
         try
         {
-            Driver driver = new net.jejdbc.jdbc.Driver();
+            Driver driver = new io.perbone.jejdbc.jdbc.Driver();
 
             assertTrue(driver.acceptsURL(URL_SAMPLE));
-            assertTrue(!driver.acceptsURL(URL_SAMPLE_WRONG));
+            assertFalse(driver.acceptsURL(URL_SAMPLE_WRONG));
         }
         catch (SQLException e)
         {
