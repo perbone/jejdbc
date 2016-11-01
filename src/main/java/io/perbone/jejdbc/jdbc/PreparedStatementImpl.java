@@ -35,6 +35,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.RowId;
 import java.sql.SQLException;
+import java.sql.SQLType;
 import java.sql.SQLXML;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -433,5 +434,26 @@ class PreparedStatementImpl extends AbstractStatement implements PreparedStateme
     {
         // TODO Auto-generated method stub
 
+    }
+
+    @Override
+    public void setObject(int parameterIndex, Object x, SQLType targetSqlType, int scaleOrLength) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        PreparedStatement.super.setObject(parameterIndex, x, targetSqlType, scaleOrLength);
+    }
+
+    @Override
+    public void setObject(int parameterIndex, Object x, SQLType targetSqlType) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        PreparedStatement.super.setObject(parameterIndex, x, targetSqlType);
+    }
+
+    @Override
+    public long executeLargeUpdate() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return PreparedStatement.super.executeLargeUpdate();
     }
 }
