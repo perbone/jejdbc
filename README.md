@@ -1,4 +1,4 @@
-jejdbc
+jejdbc - NewSQL made simple
 ======
 
 > WIP (heavily updated so you can expect constants changes - no commitment with feature freezing at this moment)
