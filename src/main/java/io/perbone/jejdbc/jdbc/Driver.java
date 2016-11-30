@@ -38,60 +38,6 @@ import java.util.regex.Pattern;
  */
 public class Driver implements java.sql.Driver
 {
-    public enum ExecutionMode
-    {
-        /**
-         * <ul>
-         * <li>Read-Write from/to local database (standalone environment)</li>
-         * </ul>
-         */
-        LOCAL,
-
-        /**
-         * <ul>
-         * <li>Read-Write from/to local master database (HA environment)</li>
-         * <li>Read-Only from local replica database (HA environment)</li>
-         * <li>Write-Forwarding to remote master database (HA environment)</li>
-         * </ul>
-         */
-        LOCAL_HA,
-
-        /**
-         * <ul>
-         * <li>Server mode for local database (standalone environment)</li>
-         * </ul>
-         */
-        SERVER,
-
-        /**
-         * <ul>
-         * <li>Server mode for local master/replica database (HA environment)</li>
-         * </ul>
-         */
-        SERVER_HA,
-
-        /**
-         * <ul>
-         * <li>Client mode for remote database (standalone/HA environment)</li>
-         * </ul>
-         */
-        CLIENT,
-
-        /**
-         * <ul>
-         * <li>Proxy mode for remote database (standalone/HA environment)</li>
-         * </ul>
-         */
-        PROXY,
-
-        /**
-         * <ul>
-         * <li>Monitor mode for remote database (standalone/HA environment)</li>
-         * </ul>
-         */
-        MONITOR
-    }
-
     /*
      * Self registration with the JDBC DriverManager.
      */
