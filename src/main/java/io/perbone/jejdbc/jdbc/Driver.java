@@ -112,7 +112,6 @@ public class Driver implements java.sql.Driver
     @Override
     public Logger getParentLogger() throws SQLFeatureNotSupportedException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new SQLFeatureNotSupportedException("No parent logger available; we use Log4j 2");
     }
 }
