@@ -34,7 +34,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * Driverc class test suit.
+ * Driver class test suit.
  * 
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
