@@ -171,6 +171,7 @@ class PreparedStatementImpl extends AbstractStatement implements PreparedStateme
     }
 
     @Override
+    @Deprecated
     public void setUnicodeStream(int parameterIndex, InputStream x, int length) throws SQLException
     {
         // TODO Auto-generated method stub
