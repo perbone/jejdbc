@@ -82,7 +82,14 @@ public class Driver implements java.sql.Driver
          * <li>Proxy mode for remote database (standalone/HA environment)</li>
          * </ul>
          */
-        PROXY
+        PROXY,
+
+        /**
+         * <ul>
+         * <li>Monitor mode for remote database (standalone/HA environment)</li>
+         * </ul>
+         */
+        MONITOR
     }
 
     /*
