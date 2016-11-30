@@ -28,7 +28,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.perbone.jejdbc</groupId>
 	<artifactId>jejdbc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<name>jejdbc</name>
 	<description>A JDBC 4.2 compliant driver for Berkeley DB Java Edition</description>
 	<url>https://github.com/perbone/jejdbc</url>
