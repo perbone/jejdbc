@@ -92,15 +92,13 @@ public class Driver implements java.sql.Driver
     @Override
     public int getMajorVersion()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        return Version.getMajorVersion();
     }
 
     @Override
     public int getMinorVersion()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        return Version.getMinorVersion();
     }
 
     @Override
