@@ -55,6 +55,8 @@ public class Driver implements java.sql.Driver
 
     private static final Pattern URL_PATTERN = Pattern.compile("jdbc:jejdbc:(?://)?([^/]+)(?:/.+)?");
 
+    private static final ExecutionMode DEFAULT_EXECUTION_MODE = ExecutionMode.LOCAL;
+
     /**
      * Creates a new
      */
