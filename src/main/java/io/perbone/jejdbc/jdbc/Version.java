@@ -22,7 +22,7 @@ package io.perbone.jejdbc.jdbc;
 import java.util.Calendar;
 
 /**
- * Application version information helper class implementation.
+ * Application version information helper class.
  * 
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
@@ -53,27 +53,42 @@ public final class Version
         jvm = System.getProperty("java.version");
     }
 
-    public static String title()
+    public static String getTitle()
     {
         return instance.title;
     }
 
-    public static String version()
+    public static String getVersion()
     {
         return instance.version;
     }
 
-    public static String vendor()
+    public int getMajorVersion()
+    {
+        return 0;
+    }
+
+    public int getMinorVersion()
+    {
+        return 0;
+    }
+
+    public int getPatchVersion()
+    {
+        return 0;
+    }
+
+    public static String getVendor()
     {
         return instance.vendor;
     }
 
-    public static String copyright()
+    public static String getCopyright()
     {
         return instance.copyright;
     }
 
-    public static String jvm()
+    public static String getJvm()
     {
         return instance.jvm;
     }
