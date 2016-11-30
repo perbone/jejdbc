@@ -33,6 +33,12 @@ public final class Version
 
     private final String version;
 
+    private final int major;
+
+    private final int minor;
+
+    private final int patch;
+
     private final String vendor;
 
     private final String copyright;
@@ -47,6 +53,9 @@ public final class Version
         title = pac.getSpecificationTitle() == null ? "JEJDBC" : pac.getSpecificationTitle();
         version = pac.getSpecificationVersion() == null ? "{version not available on this runtime}"
                 : pac.getSpecificationVersion();
+        major = parseVersionNumbers()[0];
+        minor = parseVersionNumbers()[1];
+        patch = parseVersionNumbers()[2];
         vendor = pac.getSpecificationVendor() == null ? "Paulo Perbone," : pac.getSpecificationVendor();
         copyright = String.format("(c) 2013-%d %s Todos os direitos reservados",
                 Calendar.getInstance().get(Calendar.YEAR), vendor);
@@ -65,17 +74,17 @@ public final class Version
 
     public static int getMajorVersion()
     {
-        return 0; // FIXME parse major number from the version string
+        return instance.major;
     }
 
     public static int getMinorVersion()
     {
-        return 0; // FIXME parse minor number from the version string
+        return instance.minor;
     }
 
     public static int getPatchVersion()
     {
-        return 0; // FIXME parse patch number from the version string
+        return instance.patch;
     }
 
     public static String getVendor()
@@ -91,5 +100,25 @@ public final class Version
     public static String getJvm()
     {
         return instance.jvm;
+    }
+
+    private int[] parseVersionNumbers()
+    {
+        int[] result = { 0, 0, 0 };
+
+        String[] nums = version.split("\\.");
+
+        if (nums.length == 3)
+        {
+            result[0] = Integer.parseInt(nums[0]);
+            result[1] = Integer.parseInt(nums[1]);
+            if (nums[2].split("-").length == 0)
+                result[2] = Integer.parseInt(nums[2]);
+            else
+                // Strip out -SNAPSHOT, -GA etc
+                result[2] = Integer.parseInt(nums[2].split("-")[0]);
+        }
+
+        return result;
     }
 }
