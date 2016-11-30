@@ -63,17 +63,17 @@ public final class Version
         return instance.version;
     }
 
-    public int getMajorVersion()
+    public static int getMajorVersion()
     {
         return 0; // FIXME parse major number from the version string
     }
 
-    public int getMinorVersion()
+    public static int getMinorVersion()
     {
         return 0; // FIXME parse minor number from the version string
     }
 
-    public int getPatchVersion()
+    public static int getPatchVersion()
     {
         return 0; // FIXME parse patch number from the version string
     }
