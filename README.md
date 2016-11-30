@@ -15,6 +15,7 @@ A JDBC 4.2 compliant driver for Berkeley DB Java Edition
 * Server mode for local master/replica database (HA environment)
 * Client mode for remote database (standalone/HA environment)
 * Proxy mode for remote database (standalone/HA environment)
+* Monitor mode for remote database (standalone/HA environment)
 
 ## Issues and Support
 
