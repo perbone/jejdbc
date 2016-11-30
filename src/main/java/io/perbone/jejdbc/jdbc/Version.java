@@ -65,17 +65,17 @@ public final class Version
 
     public int getMajorVersion()
     {
-        return 0;
+        return 0; // FIXME parse major number from the version string
     }
 
     public int getMinorVersion()
     {
-        return 0;
+        return 0; // FIXME parse minor number from the version string
     }
 
     public int getPatchVersion()
     {
-        return 0;
+        return 0; // FIXME parse patch number from the version string
     }
 
     public static String getVendor()
