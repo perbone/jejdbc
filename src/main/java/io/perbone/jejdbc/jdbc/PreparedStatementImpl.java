@@ -55,7 +55,7 @@ class PreparedStatementImpl extends AbstractStatement implements PreparedStateme
     public ResultSet executeQuery() throws SQLException
     {
         // TODO Auto-generated method stub
-        return null;
+        return new ResultSetImpl();
     }
 
     @Override

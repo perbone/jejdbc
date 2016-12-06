@@ -87,8 +87,8 @@ public class DriverTest
         }
         catch (SQLException e)
         {
-            assertNull(driver);
         }
+        assertNull(driver);
     }
 
     @Test

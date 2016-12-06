@@ -53,7 +53,7 @@ abstract class AbstractStatement implements Statement
     public ResultSet executeQuery(String sql) throws SQLException
     {
         // TODO Auto-generated method stub
-        return null;
+        return new ResultSetImpl();
     }
 
     @Override

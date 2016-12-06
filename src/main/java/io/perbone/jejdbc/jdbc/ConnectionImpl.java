@@ -73,7 +73,7 @@ class ConnectionImpl implements Connection
     public PreparedStatement prepareStatement(String sql) throws SQLException
     {
         // TODO Auto-generated method stub
-        return null;
+        return new PreparedStatementImpl();
     }
 
     @Override
