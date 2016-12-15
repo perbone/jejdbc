@@ -68,6 +68,13 @@ public class Driver implements java.sql.Driver
     @Override
     public Connection connect(String url, Properties info) throws SQLException
     {
+        /*
+         * According to JDBC specification: The driver should return "null" if it realizes it is the
+         * wrong kind of driver to connect to the given URL. This will be common, as when the JDBC
+         * driver manager is asked to connect to a given URL it passes the URL to each loaded driver
+         * in turn.
+         */
+
         // TODO Auto-generated method stub
         return null;
     }
