@@ -29,7 +29,6 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import org.apache.log4j.BasicConfigurator;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -48,7 +47,6 @@ public class DriverTest
     @BeforeClass
     public static void initialSetup()
     {
-        BasicConfigurator.configure();
     }
 
     @Test
