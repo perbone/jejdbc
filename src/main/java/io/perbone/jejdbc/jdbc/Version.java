@@ -27,7 +27,7 @@ import java.util.Calendar;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-public final class Version
+final class Version
 {
     private final String title;
 
