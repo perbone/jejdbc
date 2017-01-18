@@ -16,6 +16,8 @@ A JDBC 4.2 compliant driver for Berkeley DB Java Edition
 * Client mode for remote database (standalone/HA environment)
 * Proxy mode for remote database (standalone/HA environment)
 * Monitor mode for remote database (standalone/HA environment)
+* Partitioning (optionally with multi-master)
+* Saga pattern (really advanced)
 
 ## Issues and Support
 
