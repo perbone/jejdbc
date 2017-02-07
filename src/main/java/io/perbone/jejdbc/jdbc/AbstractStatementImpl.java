@@ -33,7 +33,7 @@ import java.sql.Statement;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-abstract class AbstractStatement implements Statement
+abstract class AbstractStatementImpl implements Statement
 {
     @Override
     public <T> T unwrap(Class<T> iface) throws SQLException

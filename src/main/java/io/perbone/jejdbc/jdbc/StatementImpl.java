@@ -27,6 +27,6 @@ package io.perbone.jejdbc.jdbc;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-class StatementImpl extends AbstractStatement
+class StatementImpl extends AbstractStatementImpl
 {
 }
