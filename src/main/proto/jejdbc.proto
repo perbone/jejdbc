@@ -20,7 +20,24 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
+option java_package = "io.perbone.jejdbc.ipc.internal";
+option java_outer_classname = "JeJdbcProto";
 
-package io.perbone.jejdbc.ipc;
+enum NodeStatus {
+    UNKNOWN  = 0;
+    DETACHED = 1;
+    REPLICA  = 2;
+    MASTER   = 3;
+}
 
-service MonitorService {}
+message StatusRequest {
+    bool full = 1;
+}
+
+message StatusResponse {
+    NodeStatus status = 1;
+}
+
+service MonitorService {
+    rpc getStatus(StatusRequest) returns (StatusResponse) {}
+}
