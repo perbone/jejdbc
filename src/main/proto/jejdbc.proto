@@ -23,21 +23,57 @@ option java_multiple_files = true;
 option java_package = "io.perbone.jejdbc.ipc.internal";
 option java_outer_classname = "JeJdbcProto";
 
-enum NodeStatus {
-    UNKNOWN  = 0;
-    DETACHED = 1;
-    REPLICA  = 2;
-    MASTER   = 3;
+/**
+ * The replication node state determines the operations that the 
+ * application can perform against its replicated environment. 
+ * The method getState returns the current state.
+ */
+enum NodeState {
+
+	/**
+	 * The node is not associated with the group. Its handle has been
+	 * closed. No operations can be performed on the environment when it is
+	 * in this state.
+	 */
+	DETACHED = 0;
+	
+	/**
+	 * The node is not currently in contact with the master, but is actively
+	 * trying to establish contact with, or decide upon, a master. While in
+	 * this state the node is restricted to performing just read operations
+	 * on its environment. In a functioning group, this state is
+	 * transitory.
+	 */
+	UNKNOWN = 1;
+	
+	/**
+	 * The node is the unique master of the group and can both read and
+	 * write to its environment. When the node transitions to the
+	 * state, the application running on the node must make provisions to
+	 * start processing application level write requests in addition to
+	 * read requests.
+	 */
+	MASTER = 2;
+	
+	/**
+	 * The node is a replica that is being updated by the master. It is
+	 * restricted to reading its environment. When the node
+	 * transitions to this state, the application running on the node must
+	 * make provisions to ensure that it does not write to the
+	 * environment. It must arrange for all write requests to be routed to
+	 * the master.
+	 */
+	REPLICA = 3;
 }
 
-message StatusRequest {
-    bool full = 1;
+message StateRequest {
+    bool fullState = 1;
 }
 
-message StatusResponse {
-    NodeStatus status = 1;
+message StateResponse {
+    NodeState state = 1;
 }
 
 service MonitorService {
-    rpc getStatus(StatusRequest) returns (StatusResponse) {}
+    rpc getState(StateRequest) returns (StateResponse) {}
 }
