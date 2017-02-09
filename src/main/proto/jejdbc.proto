@@ -17,6 +17,11 @@
  * limitations under the License
  */
 
+/**
+ * @author Paulo Perbone <pauloperbone@yahoo.com>
+ * @since 0.1.0
+ */
+
 syntax = "proto3";
 
 option java_multiple_files = true;
