@@ -50,13 +50,13 @@ final class Version
     private Version()
     {
         Package pac = this.getClass().getPackage();
-        title = pac.getSpecificationTitle() == null ? "JEJDBC" : pac.getSpecificationTitle();
-        version = pac.getSpecificationVersion() == null ? "{version not available on this runtime}"
-                : pac.getSpecificationVersion();
+        title = pac.getImplementationTitle() == null ? "JEJDBC" : pac.getImplementationTitle();
+        version = pac.getImplementationVersion() == null ? "{version not available on this runtime}"
+                : pac.getImplementationVersion();
         major = parseVersionNumbers()[0];
         minor = parseVersionNumbers()[1];
         patch = parseVersionNumbers()[2];
-        vendor = pac.getSpecificationVendor() == null ? "Paulo Perbone," : pac.getSpecificationVendor();
+        vendor = pac.getImplementationVendor() == null ? "Paulo Perbone," : pac.getImplementationVendor();
         copyright = String.format("(c) 2013-%d %s Todos os direitos reservados",
                 Calendar.getInstance().get(Calendar.YEAR), vendor);
         jvm = System.getProperty("java.version");
