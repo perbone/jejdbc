@@ -49,14 +49,14 @@ import java.util.concurrent.Executor;
 class ConnectionImpl implements Connection
 {
     @Override
-    public <T> T unwrap(Class<T> iface) throws SQLException
+    public <T> T unwrap(final Class<T> iface) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public boolean isWrapperFor(Class<?> iface) throws SQLException
+    public boolean isWrapperFor(final Class<?> iface) throws SQLException
     {
         // TODO Auto-generated method stub
         return false;
@@ -70,28 +70,28 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public PreparedStatement prepareStatement(String sql) throws SQLException
+    public PreparedStatement prepareStatement(final String sql) throws SQLException
     {
         // TODO Auto-generated method stub
         return new PreparedStatementImpl();
     }
 
     @Override
-    public CallableStatement prepareCall(String sql) throws SQLException
+    public CallableStatement prepareCall(final String sql) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String nativeSQL(String sql) throws SQLException
+    public String nativeSQL(final String sql) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void setAutoCommit(boolean autoCommit) throws SQLException
+    public void setAutoCommit(final boolean autoCommit) throws SQLException
     {
         // TODO Auto-generated method stub
 
@@ -140,7 +140,7 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public void setReadOnly(boolean readOnly) throws SQLException
+    public void setReadOnly(final boolean readOnly) throws SQLException
     {
         // TODO Auto-generated method stub
 
@@ -154,7 +154,7 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public void setCatalog(String catalog) throws SQLException
+    public void setCatalog(final String catalog) throws SQLException
     {
         // TODO Auto-generated method stub
 
@@ -168,7 +168,7 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public void setTransactionIsolation(int level) throws SQLException
+    public void setTransactionIsolation(final int level) throws SQLException
     {
         // TODO Auto-generated method stub
 
@@ -196,14 +196,14 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException
+    public Statement createStatement(final int resultSetType, final int resultSetConcurrency) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency)
+    public PreparedStatement prepareStatement(final String sql, final int resultSetType, final int resultSetConcurrency)
             throws SQLException
     {
         // TODO Auto-generated method stub
@@ -211,7 +211,8 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency) throws SQLException
+    public CallableStatement prepareCall(final String sql, final int resultSetType, final int resultSetConcurrency)
+            throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
@@ -225,14 +226,14 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public void setTypeMap(Map<String, Class<?>> map) throws SQLException
+    public void setTypeMap(final Map<String, Class<?>> map) throws SQLException
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void setHoldability(int holdability) throws SQLException
+    public void setHoldability(final int holdability) throws SQLException
     {
         // TODO Auto-generated method stub
 
@@ -253,66 +254,66 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public Savepoint setSavepoint(String name) throws SQLException
+    public Savepoint setSavepoint(final String name) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void rollback(Savepoint savepoint) throws SQLException
+    public void rollback(final Savepoint savepoint) throws SQLException
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void releaseSavepoint(Savepoint savepoint) throws SQLException
+    public void releaseSavepoint(final Savepoint savepoint) throws SQLException
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability)
-            throws SQLException
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency,
-            int resultSetHoldability) throws SQLException
+    public Statement createStatement(final int resultSetType, final int resultSetConcurrency,
+            final int resultSetHoldability) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency,
-            int resultSetHoldability) throws SQLException
+    public PreparedStatement prepareStatement(final String sql, final int resultSetType, final int resultSetConcurrency,
+            final int resultSetHoldability) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException
+    public CallableStatement prepareCall(final String sql, final int resultSetType, final int resultSetConcurrency,
+            final int resultSetHoldability) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public PreparedStatement prepareStatement(String sql, int[] columnIndexes) throws SQLException
+    public PreparedStatement prepareStatement(final String sql, final int autoGeneratedKeys) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public PreparedStatement prepareStatement(String sql, String[] columnNames) throws SQLException
+    public PreparedStatement prepareStatement(final String sql, final int[] columnIndexes) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public PreparedStatement prepareStatement(final String sql, final String[] columnNames) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
@@ -347,28 +348,28 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public boolean isValid(int timeout) throws SQLException
+    public boolean isValid(final int timeout) throws SQLException
     {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public void setClientInfo(String name, String value) throws SQLClientInfoException
+    public void setClientInfo(final String name, final String value) throws SQLClientInfoException
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void setClientInfo(Properties properties) throws SQLClientInfoException
+    public void setClientInfo(final Properties properties) throws SQLClientInfoException
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public String getClientInfo(String name) throws SQLException
+    public String getClientInfo(final String name) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
@@ -382,21 +383,21 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public Array createArrayOf(String typeName, Object[] elements) throws SQLException
+    public Array createArrayOf(final String typeName, final Object[] elements) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Struct createStruct(String typeName, Object[] attributes) throws SQLException
+    public Struct createStruct(final String typeName, final Object[] attributes) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void setSchema(String schema) throws SQLException
+    public void setSchema(final String schema) throws SQLException
     {
         // TODO Auto-generated method stub
 
@@ -410,14 +411,14 @@ class ConnectionImpl implements Connection
     }
 
     @Override
-    public void abort(Executor executor) throws SQLException
+    public void abort(final Executor executor) throws SQLException
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException
+    public void setNetworkTimeout(final Executor executor, final int milliseconds) throws SQLException
     {
         // TODO Auto-generated method stub
 

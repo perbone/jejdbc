@@ -66,7 +66,7 @@ public class Driver implements java.sql.Driver
     }
 
     @Override
-    public Connection connect(String url, Properties info) throws SQLException
+    public Connection connect(final String url, final Properties info) throws SQLException
     {
         /*
          * According to JDBC specification: The driver should return "null" if it realizes it is the
@@ -80,7 +80,7 @@ public class Driver implements java.sql.Driver
     }
 
     @Override
-    public boolean acceptsURL(String url) throws SQLException
+    public boolean acceptsURL(final String url) throws SQLException
     {
         Matcher matcher = URL_PATTERN.matcher(url);
 
@@ -90,7 +90,7 @@ public class Driver implements java.sql.Driver
     }
 
     @Override
-    public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException
+    public DriverPropertyInfo[] getPropertyInfo(final String url, final Properties info) throws SQLException
     {
         // TODO Auto-generated method stub
         return null;
