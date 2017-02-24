@@ -23,9 +23,10 @@ import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
+import java.util.Locale;
 import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -55,11 +56,12 @@ public class Driver implements java.sql.Driver
 
     private static final Pattern URL_PATTERN = Pattern.compile("jdbc:jejdbc:(?://)?([^/]+)(?:/.+)?");
 
-    @SuppressWarnings("unused")
-    private static final ExecutionMode DEFAULT_EXECUTION_MODE = ExecutionMode.CLIENT;
+    private ExecutionMode executionMode = ExecutionMode.CLIENT;
+
+    private ResourceBundle messages = ResourceBundle.getBundle("messages", Locale.getDefault());
 
     /**
-     * Creates a new
+     * Creates a new driver instance
      */
     public Driver()
     {
@@ -74,19 +76,21 @@ public class Driver implements java.sql.Driver
          * driver manager is asked to connect to a given URL it passes the URL to each loaded driver
          * in turn.
          */
+        if (!acceptsURL(url))
+            return null;
 
-        // TODO Auto-generated method stub
+        // TODO open a connection based on the configured execution mode
+
         return null;
     }
 
     @Override
     public boolean acceptsURL(final String url) throws SQLException
     {
-        Matcher matcher = URL_PATTERN.matcher(url);
+        if (url == null)
+            throw new SQLException("Parameter 'url' cannot be null");
 
-        boolean accepts = matcher.matches();
-
-        return accepts;
+        return URL_PATTERN.matcher(url).matches();
     }
 
     @Override
@@ -111,6 +115,7 @@ public class Driver implements java.sql.Driver
     @Override
     public boolean jdbcCompliant()
     {
+        // FIXME make it jdbc compliant
         return false;
     }
 
