@@ -34,7 +34,7 @@ public final class Messages
 {
     public static final String KEY_EXCEPTION_CANT_REGISTER_DRIVER = "driver.exception.cantRegisterDriver";
     public static final String KEY_EXCEPTION_NO_PARENT_LOGGER = "driver.exception.noParentLogger";
-    public static final String KEY_PARAM_URL_NULL = "driver.param.url.null";
+    public static final String KEY_PARAM_URL_NULL = "driver.validation.param.url.null";
 
     private ResourceBundle bundle;
 
