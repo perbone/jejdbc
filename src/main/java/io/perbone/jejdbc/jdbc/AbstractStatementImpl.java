@@ -25,6 +25,8 @@ import java.sql.SQLException;
 import java.sql.SQLWarning;
 import java.sql.Statement;
 
+import io.perbone.jejdbc.i18n.Messages;
+
 /**
  * This is the {@link java.sql.Statement} interface abstract implementation.
  * 
@@ -35,6 +37,14 @@ import java.sql.Statement;
  */
 abstract class AbstractStatementImpl implements Statement
 {
+    protected final Messages messages;
+
+    public AbstractStatementImpl(final Messages messages)
+    {
+        // TODO Auto-generated constructor stub
+        this.messages = messages;
+    }
+
     @Override
     public <T> T unwrap(final Class<T> iface) throws SQLException
     {
@@ -53,7 +63,7 @@ abstract class AbstractStatementImpl implements Statement
     public ResultSet executeQuery(final String sql) throws SQLException
     {
         // TODO Auto-generated method stub
-        return new ResultSetImpl();
+        return new ResultSetImpl(messages);
     }
 
     @Override

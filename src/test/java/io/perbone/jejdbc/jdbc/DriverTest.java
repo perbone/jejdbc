@@ -104,4 +104,28 @@ public class DriverTest
             fail(e.getMessage());
         }
     }
+
+    @Test
+    public void testExceptionMessages()
+    {
+        Driver driver = new io.perbone.jejdbc.jdbc.Driver();
+
+        try
+        {
+            driver.acceptsURL(null);
+        }
+        catch (SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+
+        try
+        {
+            driver.getParentLogger();
+        }
+        catch (SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
 }

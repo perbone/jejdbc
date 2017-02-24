@@ -19,15 +19,19 @@
 
 package io.perbone.jejdbc.jdbc;
 
+import static io.perbone.jejdbc.i18n.Messages.KEY_EXCEPTION_CANT_REGISTER_DRIVER;
+import static io.perbone.jejdbc.i18n.Messages.KEY_EXCEPTION_NO_PARENT_LOGGER;
+import static io.perbone.jejdbc.i18n.Messages.KEY_PARAM_URL_NULL;
+
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
-import java.util.Locale;
 import java.util.Properties;
-import java.util.ResourceBundle;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
+
+import io.perbone.jejdbc.i18n.Messages;
 
 /**
  * This is the {@link java.sql.Driver} interface implementation.
@@ -50,15 +54,15 @@ public class Driver implements java.sql.Driver
         }
         catch (SQLException e)
         {
-            throw new RuntimeException("Can't register driver", e);
+            throw new RuntimeException(new Messages().get(KEY_EXCEPTION_CANT_REGISTER_DRIVER), e);
         }
     }
 
     private static final Pattern URL_PATTERN = Pattern.compile("jdbc:jejdbc:(?://)?([^/]+)(?:/.+)?");
 
-    private ExecutionMode executionMode = ExecutionMode.CLIENT;
+    // private ExecutionMode executionMode = ExecutionMode.CLIENT;
 
-    private ResourceBundle messages = ResourceBundle.getBundle("messages", Locale.getDefault());
+    private final Messages messages = new Messages();
 
     /**
      * Creates a new driver instance
@@ -81,14 +85,14 @@ public class Driver implements java.sql.Driver
 
         // TODO open a connection based on the configured execution mode
 
-        return null;
+        return new ConnectionImpl(messages);
     }
 
     @Override
     public boolean acceptsURL(final String url) throws SQLException
     {
         if (url == null)
-            throw new SQLException("Parameter 'url' cannot be null");
+            throw new SQLException(messages.get(KEY_PARAM_URL_NULL));
 
         return URL_PATTERN.matcher(url).matches();
     }
@@ -122,6 +126,6 @@ public class Driver implements java.sql.Driver
     @Override
     public Logger getParentLogger() throws SQLFeatureNotSupportedException
     {
-        throw new SQLFeatureNotSupportedException("No parent logger available; we use Log4j 2");
+        throw new SQLFeatureNotSupportedException(messages.get(KEY_EXCEPTION_NO_PARENT_LOGGER));
     }
 }

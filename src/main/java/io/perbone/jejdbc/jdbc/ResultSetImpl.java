@@ -42,6 +42,8 @@ import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Map;
 
+import io.perbone.jejdbc.i18n.Messages;
+
 /**
  * This is the {@link java.sql.ResultSet} interface implementation.
  * 
@@ -52,6 +54,14 @@ import java.util.Map;
  */
 class ResultSetImpl implements ResultSet
 {
+    private final Messages messages;
+
+    public ResultSetImpl(final Messages messages)
+    {
+        // TODO Auto-generated constructor stub
+        this.messages = messages;
+    }
+
     @Override
     public <T> T unwrap(final Class<T> iface) throws SQLException
     {

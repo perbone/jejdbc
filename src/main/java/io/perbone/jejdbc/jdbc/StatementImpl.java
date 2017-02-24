@@ -19,6 +19,8 @@
 
 package io.perbone.jejdbc.jdbc;
 
+import io.perbone.jejdbc.i18n.Messages;
+
 /**
  * This is the {@link java.sql.Statement} interface implementation.
  * 
@@ -29,4 +31,9 @@ package io.perbone.jejdbc.jdbc;
  */
 class StatementImpl extends AbstractStatementImpl
 {
+    public StatementImpl(Messages messages)
+    {
+        super(messages);
+        // TODO Auto-generated constructor stub
+    }
 }

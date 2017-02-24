@@ -38,6 +38,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
+import io.perbone.jejdbc.i18n.Messages;
+
 /**
  * This is the {@link java.sql.Connection} interface implementation.
  * 
@@ -48,6 +50,13 @@ import java.util.concurrent.Executor;
  */
 class ConnectionImpl implements Connection
 {
+    private final Messages messages;
+
+    public ConnectionImpl(final Messages messages)
+    {
+        this.messages = messages;
+    }
+
     @Override
     public <T> T unwrap(final Class<T> iface) throws SQLException
     {
@@ -73,7 +82,7 @@ class ConnectionImpl implements Connection
     public PreparedStatement prepareStatement(final String sql) throws SQLException
     {
         // TODO Auto-generated method stub
-        return new PreparedStatementImpl();
+        return new PreparedStatementImpl(messages);
     }
 
     @Override

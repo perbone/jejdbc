@@ -41,6 +41,8 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
+import io.perbone.jejdbc.i18n.Messages;
+
 /**
  * This is the {@link java.sql.PreparedStatement} interface implementation.
  * 
@@ -51,11 +53,16 @@ import java.util.Calendar;
  */
 class PreparedStatementImpl extends AbstractStatementImpl implements PreparedStatement
 {
+    public PreparedStatementImpl(final Messages messages)
+    {
+        super(messages);
+    }
+
     @Override
     public ResultSet executeQuery() throws SQLException
     {
         // TODO Auto-generated method stub
-        return new ResultSetImpl();
+        return new ResultSetImpl(messages);
     }
 
     @Override
