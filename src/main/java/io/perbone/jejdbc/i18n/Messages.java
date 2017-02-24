@@ -32,6 +32,8 @@ import java.util.ResourceBundle;
  */
 public final class Messages
 {
+    public static final String BASE_NAME = "messages";
+
     public static final String KEY_EXCEPTION_CANT_REGISTER_DRIVER = "driver.exception.cantRegisterDriver";
     public static final String KEY_EXCEPTION_NO_PARENT_LOGGER = "driver.exception.noParentLogger";
     public static final String KEY_PARAM_URL_NULL = "driver.validation.param.url.null";
@@ -40,19 +42,19 @@ public final class Messages
 
     public Messages()
     {
-        bundle = ResourceBundle.getBundle("messages", Locale.getDefault());
+        bundle = ResourceBundle.getBundle(BASE_NAME, Locale.getDefault());
     }
 
     public Messages setLocale(final String language)
     {
-        bundle = ResourceBundle.getBundle("messages", new Locale(language));
+        bundle = ResourceBundle.getBundle(BASE_NAME, new Locale(language));
 
         return this;
     }
 
     public Messages setLocale(final String language, final String country)
     {
-        bundle = ResourceBundle.getBundle("messages", new Locale(language, country));
+        bundle = ResourceBundle.getBundle(BASE_NAME, new Locale(language, country));
 
         return this;
     }
