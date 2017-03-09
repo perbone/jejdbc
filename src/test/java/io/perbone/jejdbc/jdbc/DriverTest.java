@@ -41,7 +41,7 @@ import org.junit.Test;
 public class DriverTest
 {
     private static final String URL_SAMPLE = "jdbc:jejdbc://localhost:5101";
-    private static final String URL_SAMPLE_WRONG = "jdbc:blah://localhost:5101";
+    private static final String URL_SAMPLE_WRONG = "jdbc:foo://localhost:5101";
     private static final String DRIVER_CLASS_PATH = "io.perbone.jejdbc.jdbc.Driver";
 
     @BeforeClass
@@ -56,7 +56,7 @@ public class DriverTest
         {
             Class.forName(DRIVER_CLASS_PATH);
         }
-        catch (ClassNotFoundException e)
+        catch (final ClassNotFoundException e)
         {
             fail(e.getMessage());
         }
@@ -72,7 +72,7 @@ public class DriverTest
             assertNotNull(driver);
             assertTrue(driver.getClass().equals(io.perbone.jejdbc.jdbc.Driver.class));
         }
-        catch (SQLException e)
+        catch (final SQLException e)
         {
             fail(e.getMessage());
         }
@@ -83,7 +83,7 @@ public class DriverTest
         {
             driver = DriverManager.getDriver(URL_SAMPLE_WRONG);
         }
-        catch (SQLException e)
+        catch (final SQLException e)
         {
         }
         assertNull(driver);
@@ -99,7 +99,7 @@ public class DriverTest
             assertTrue(driver.acceptsURL(URL_SAMPLE));
             assertFalse(driver.acceptsURL(URL_SAMPLE_WRONG));
         }
-        catch (SQLException e)
+        catch (final SQLException e)
         {
             fail(e.getMessage());
         }
@@ -114,7 +114,7 @@ public class DriverTest
         {
             driver.acceptsURL(null);
         }
-        catch (SQLException e)
+        catch (final SQLException e)
         {
             System.out.println(e.getMessage());
         }
@@ -123,7 +123,7 @@ public class DriverTest
         {
             driver.getParentLogger();
         }
-        catch (SQLException e)
+        catch (final SQLException e)
         {
             System.out.println(e.getMessage());
         }
