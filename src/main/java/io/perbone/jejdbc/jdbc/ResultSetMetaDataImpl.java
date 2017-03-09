@@ -32,164 +32,168 @@ import java.sql.SQLException;
  */
 class ResultSetMetaDataImpl implements ResultSetMetaData
 {
+    public ResultSetMetaDataImpl()
+    {
+    }
+
     @Override
     public <T> T unwrap(final Class<T> iface) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isWrapperFor(final Class<?> iface) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public int getColumnCount() throws SQLException
     {
-        // TODO Auto-generated method stub
-        return 0;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isAutoIncrement(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isCaseSensitive(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isSearchable(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isCurrency(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public int isNullable(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return 0;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isSigned(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public int getColumnDisplaySize(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return 0;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public String getColumnLabel(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public String getColumnName(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public String getSchemaName(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public int getPrecision(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return 0;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public int getScale(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return 0;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public String getTableName(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public String getCatalogName(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public int getColumnType(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return 0;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public String getColumnTypeName(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isReadOnly(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isWritable(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public boolean isDefinitelyWritable(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return false;
+        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public String getColumnClassName(final int column) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
+
     }
 }
