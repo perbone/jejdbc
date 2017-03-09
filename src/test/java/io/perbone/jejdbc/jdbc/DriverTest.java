@@ -40,7 +40,8 @@ import org.junit.Test;
  */
 public class DriverTest
 {
-    private static final String URL_SAMPLE = "jdbc:jejdbc://localhost:5101";
+    private static final String URL_SAMPLE_CLIENT = "jdbc:jejdbc://localhost:5101/sampledb";
+    private static final String URL_SAMPLE_LOCAL = "jdbc:jejdbc:/tmp/sampledb";
     private static final String URL_SAMPLE_WRONG = "jdbc:foo://localhost:5101";
     private static final String DRIVER_CLASS_PATH = "io.perbone.jejdbc.jdbc.Driver";
 
@@ -65,9 +66,11 @@ public class DriverTest
     @Test
     public void getDriver()
     {
+        Driver driver = null;
+
         try
         {
-            Driver driver = DriverManager.getDriver(URL_SAMPLE);
+            driver = DriverManager.getDriver(URL_SAMPLE_CLIENT);
 
             assertNotNull(driver);
             assertTrue(driver.getClass().equals(io.perbone.jejdbc.jdbc.Driver.class));
@@ -77,7 +80,19 @@ public class DriverTest
             fail(e.getMessage());
         }
 
-        Driver driver = null;
+        try
+        {
+            driver = DriverManager.getDriver(URL_SAMPLE_LOCAL);
+
+            assertNotNull(driver);
+            assertTrue(driver.getClass().equals(io.perbone.jejdbc.jdbc.Driver.class));
+        }
+        catch (final SQLException e)
+        {
+            fail(e.getMessage());
+        }
+
+        driver = null;
 
         try
         {
@@ -86,6 +101,7 @@ public class DriverTest
         catch (final SQLException e)
         {
         }
+
         assertNull(driver);
     }
 
@@ -96,7 +112,7 @@ public class DriverTest
         {
             Driver driver = new io.perbone.jejdbc.jdbc.Driver();
 
-            assertTrue(driver.acceptsURL(URL_SAMPLE));
+            assertTrue(driver.acceptsURL(URL_SAMPLE_CLIENT));
             assertFalse(driver.acceptsURL(URL_SAMPLE_WRONG));
         }
         catch (final SQLException e)
