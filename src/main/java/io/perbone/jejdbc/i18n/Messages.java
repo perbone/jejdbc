@@ -32,7 +32,7 @@ import java.util.ResourceBundle;
  */
 public final class Messages
 {
-    public static final String BASE_NAME = "messages";
+    public static final String BASE_NAME = "io/perbone/jejdbc/i18n/messages";
 
     public static final String KEY_EXCEPTION_CANT_REGISTER_DRIVER = "driver.exception.cantRegisterDriver";
     public static final String KEY_EXCEPTION_NO_PARENT_LOGGER = "driver.exception.noParentLogger";
