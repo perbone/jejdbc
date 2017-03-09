@@ -61,7 +61,7 @@
 		<protobuf.version>3.2.0</protobuf.version>
 		<grpc.version>1.1.2</grpc.version>
 		<je.version>7.3.7</je.version>
-		<msgpack.version>0.8.11</msgpack.version>
+		<msgpack.version>0.8.12</msgpack.version>
 	</properties>
 	<repositories>
 		<repository>
