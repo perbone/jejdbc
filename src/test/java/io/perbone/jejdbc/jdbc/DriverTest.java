@@ -25,6 +25,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -40,10 +41,11 @@ import org.junit.Test;
  */
 public class DriverTest
 {
+    private static final String DRIVER_CLASS_PATH = "io.perbone.jejdbc.jdbc.Driver";
+
     private static final String URL_SAMPLE_CLIENT = "jdbc:jejdbc://localhost:5101/sampledb";
     private static final String URL_SAMPLE_LOCAL = "jdbc:jejdbc:/tmp/sampledb";
-    private static final String URL_SAMPLE_WRONG = "jdbc:foo://localhost:5101";
-    private static final String DRIVER_CLASS_PATH = "io.perbone.jejdbc.jdbc.Driver";
+    private static final String URL_SAMPLE_BAD = "jdbc:foo://localhost:5101";
 
     @BeforeClass
     public static void initialSetup()
@@ -96,7 +98,7 @@ public class DriverTest
 
         try
         {
-            driver = DriverManager.getDriver(URL_SAMPLE_WRONG);
+            driver = DriverManager.getDriver(URL_SAMPLE_BAD);
         }
         catch (final SQLException e)
         {
@@ -113,7 +115,7 @@ public class DriverTest
             Driver driver = new io.perbone.jejdbc.jdbc.Driver();
 
             assertTrue(driver.acceptsURL(URL_SAMPLE_CLIENT));
-            assertFalse(driver.acceptsURL(URL_SAMPLE_WRONG));
+            assertFalse(driver.acceptsURL(URL_SAMPLE_BAD));
         }
         catch (final SQLException e)
         {
@@ -122,26 +124,42 @@ public class DriverTest
     }
 
     @Test
-    public void testExceptionMessages()
+    public void testConnection()
+    {
+        try
+        {
+            Driver driver = DriverManager.getDriver(URL_SAMPLE_LOCAL);
+
+            Connection conn = driver.connect(URL_SAMPLE_CLIENT, null);
+            assertNotNull(conn);
+            conn.close();
+
+            conn = driver.connect(URL_SAMPLE_LOCAL, null);
+            assertNotNull(conn);
+            conn.close();
+
+            conn = driver.connect(URL_SAMPLE_BAD, null);
+            assertNull(conn);
+        }
+        catch (final SQLException e)
+        {
+            fail(e.getMessage());
+        }
+    }
+
+    @Test(expected = SQLException.class)
+    public void testExceptionMessagesAcceptsURL() throws SQLException
     {
         Driver driver = new io.perbone.jejdbc.jdbc.Driver();
 
-        try
-        {
-            driver.acceptsURL(null);
-        }
-        catch (final SQLException e)
-        {
-            System.out.println(e.getMessage());
-        }
+        driver.acceptsURL(null);
+    }
 
-        try
-        {
-            driver.getParentLogger();
-        }
-        catch (final SQLException e)
-        {
-            System.out.println(e.getMessage());
-        }
+    @Test(expected = SQLException.class)
+    public void testExceptionMessagesGetParentLogger() throws SQLException
+    {
+        Driver driver = new io.perbone.jejdbc.jdbc.Driver();
+
+        driver.getParentLogger();
     }
 }
