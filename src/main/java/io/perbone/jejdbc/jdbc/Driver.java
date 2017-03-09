@@ -60,7 +60,8 @@ public class Driver implements java.sql.Driver
 
     private static final Pattern URL_PATTERN = Pattern.compile("jdbc:jejdbc:(?://)?([^/]+)(?:/.+)?");
 
-    // private ExecutionMode executionMode = ExecutionMode.CLIENT;
+    @SuppressWarnings("unused")
+    private ExecutionMode executionMode = ExecutionMode.LOCAL;
 
     private final Messages messages = new Messages();
 
@@ -94,14 +95,15 @@ public class Driver implements java.sql.Driver
         if (url == null)
             throw new SQLException(messages.get(KEY_PARAM_URL_NULL));
 
-        return URL_PATTERN.matcher(url).matches();
+        URL_PATTERN.matcher(url).matches();
+        // FIXME should use patter - this is temporary
+        return url.startsWith("jdbc:jejdbc:");
     }
 
     @Override
     public DriverPropertyInfo[] getPropertyInfo(final String url, final Properties info) throws SQLException
     {
-        // TODO Auto-generated method stub
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -119,7 +121,7 @@ public class Driver implements java.sql.Driver
     @Override
     public boolean jdbcCompliant()
     {
-        // FIXME make it jdbc compliant
+        // FIXME make it ANSI SQL92 compliant
         return false;
     }
 
