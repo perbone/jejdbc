@@ -51,7 +51,7 @@ import io.perbone.jejdbc.i18n.Messages;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-class PreparedStatementImpl extends AbstractStatementImpl implements PreparedStatement
+class PreparedStatementImpl extends StatementImpl implements PreparedStatement
 {
     public PreparedStatementImpl(final Messages messages)
     {

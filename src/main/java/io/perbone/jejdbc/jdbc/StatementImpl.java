@@ -19,6 +19,12 @@
 
 package io.perbone.jejdbc.jdbc;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLWarning;
+import java.sql.Statement;
+
 import io.perbone.jejdbc.i18n.Messages;
 
 /**
@@ -29,11 +35,377 @@ import io.perbone.jejdbc.i18n.Messages;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-class StatementImpl extends AbstractStatementImpl
+class StatementImpl implements Statement
 {
-    public StatementImpl(Messages messages)
+    protected final Messages messages;
+
+    public StatementImpl(final Messages messages)
     {
-        super(messages);
         // TODO Auto-generated constructor stub
+        this.messages = messages;
+    }
+
+    @Override
+    public <T> T unwrap(final Class<T> iface) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public boolean isWrapperFor(final Class<?> iface) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public ResultSet executeQuery(final String sql) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return new ResultSetImpl(messages);
+    }
+
+    @Override
+    public int executeUpdate(final String sql) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void close() throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getMaxFieldSize() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setMaxFieldSize(final int max) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getMaxRows() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setMaxRows(final int max) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void setEscapeProcessing(final boolean enable) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getQueryTimeout() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setQueryTimeout(final int seconds) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void cancel() throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public SQLWarning getWarnings() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void clearWarnings() throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void setCursorName(final String name) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public boolean execute(final String sql) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public ResultSet getResultSet() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public int getUpdateCount() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public boolean getMoreResults() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public void setFetchDirection(final int direction) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getFetchDirection() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void setFetchSize(final int rows) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int getFetchSize() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public int getResultSetConcurrency() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public int getResultSetType() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void addBatch(String sql) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void clearBatch() throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int[] executeBatch() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Connection getConnection() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public boolean getMoreResults(final int current) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public ResultSet getGeneratedKeys() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public int executeUpdate(final String sql, final int autoGeneratedKeys) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public int executeUpdate(final String sql, final int[] columnIndexes) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public int executeUpdate(final String sql, final String[] columnNames) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public boolean execute(final String sql, final int autoGeneratedKeys) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean execute(final String sql, final int[] columnIndexes) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean execute(final String sql, final String[] columnNames) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public int getResultSetHoldability() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public boolean isClosed() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public void setPoolable(final boolean poolable) throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public boolean isPoolable() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public void closeOnCompletion() throws SQLException
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public boolean isCloseOnCompletion() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public long getLargeUpdateCount() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return Statement.super.getLargeUpdateCount();
+    }
+
+    @Override
+    public void setLargeMaxRows(final long max) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        Statement.super.setLargeMaxRows(max);
+    }
+
+    @Override
+    public long getLargeMaxRows() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return Statement.super.getLargeMaxRows();
+    }
+
+    @Override
+    public long[] executeLargeBatch() throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return Statement.super.executeLargeBatch();
+    }
+
+    @Override
+    public long executeLargeUpdate(final String sql) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return Statement.super.executeLargeUpdate(sql);
+    }
+
+    @Override
+    public long executeLargeUpdate(final String sql, final int autoGeneratedKeys) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return Statement.super.executeLargeUpdate(sql, autoGeneratedKeys);
+    }
+
+    @Override
+    public long executeLargeUpdate(final String sql, final int[] columnIndexes) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return Statement.super.executeLargeUpdate(sql, columnIndexes);
+    }
+
+    @Override
+    public long executeLargeUpdate(final String sql, final String[] columnNames) throws SQLException
+    {
+        // TODO Auto-generated method stub
+        return Statement.super.executeLargeUpdate(sql, columnNames);
     }
 }

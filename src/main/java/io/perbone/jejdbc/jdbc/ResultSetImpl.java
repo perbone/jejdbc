@@ -54,6 +54,7 @@ import io.perbone.jejdbc.i18n.Messages;
  */
 class ResultSetImpl implements ResultSet
 {
+    @SuppressWarnings("unused")
     private final Messages messages;
 
     public ResultSetImpl(final Messages messages)
