@@ -24,10 +24,14 @@
 
 syntax = "proto3";
 
+package jejdbc;
+
+import "google/protobuf/timestamp.proto";
+
 /* Java specific settings */
 option java_multiple_files = true;
-option java_package = "io.perbone.jejdbc.ipc.proto";
-option java_outer_classname = "JeJdbcProto";
+option java_package = "io.perbone.jejdbc.grpc";
+option java_outer_classname = "JeJdbc";
 
 /**
  * The replication node state determines the operations that the 
@@ -81,5 +85,5 @@ message StateResponse {
 }
 
 service MonitorService {
-    rpc getState(StateRequest) returns (StateResponse) {}
+    rpc GetState (StateRequest) returns (StateResponse) {}
 }
