@@ -1,4 +1,4 @@
-jejdbc - NewSQL made simple [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+jejdbc - JDBC Driver for Berkeley DB Java Edition [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 ======
 
 > WIP (heavily updated so you can expect constants changes - no commitment with feature freezing at this moment)
