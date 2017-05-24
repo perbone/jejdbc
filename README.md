@@ -3,7 +3,7 @@ jejdbc - JDBC Driver for Berkeley DB Java Edition [![License](https://img.shield
 
 > WIP (heavily updated so you can expect constants changes - no commitment with feature freezing at this moment)
 
-A JDBC 4.2 compliant driver for Berkeley DB Java Edition
+JDBC 4.2 compliant driver for Berkeley DB Java Edition
 
 ## Features
 
