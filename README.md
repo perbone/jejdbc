@@ -39,7 +39,7 @@ For transparency and insight into our release cycle, releases are be numbered wi
 
 ## License
 
-Copyright 2013-2017 Paulo Perbone
+Copyright 2013-2018 Paulo Perbone
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
