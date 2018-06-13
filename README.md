@@ -1,7 +1,6 @@
 jejdbc - JDBC Driver for Berkeley DB Java Edition [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 ======
-
-> WIP (heavily updated so you can expect constants changes - no commitment with feature freezing at this moment)
+> At the moment the project is stopped because I'm waiting for the final release of the new Asynchronous Database Access API (ADBA) as I think this API is more relevant for the current trend of micro services and reactive programming. Having said that, I still plan to implement the JDBC API, but, it's not my priority at the moment. In the current state I'm afraid this project is useless for end users. Sorry for the inconvenience.
 
 JDBC 4.2 compliant driver for Berkeley DB Java Edition
 
