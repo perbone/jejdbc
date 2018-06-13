@@ -45,11 +45,11 @@ final class Version
 
     private final String jvm;
 
-    private static Version instance = new Version();
+    private static final Version instance = new Version();
 
     private Version()
     {
-        Package pac = this.getClass().getPackage();
+        final Package pac = this.getClass().getPackage();
         title = pac.getImplementationTitle() == null ? "JEJDBC" : pac.getImplementationTitle();
         version = pac.getImplementationVersion() == null ? "{version not available on this runtime}"
                 : pac.getImplementationVersion();
@@ -104,9 +104,9 @@ final class Version
 
     private int[] parseVersionNumbers()
     {
-        int[] result = { 0, 0, 0 };
+        final int[] result = { 0, 0, 0 };
 
-        String[] nums = version.split("\\.");
+        final String[] nums = version.split("\\.");
 
         if (nums.length == 3)
         {
