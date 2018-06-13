@@ -41,7 +41,7 @@ import io.perbone.jejdbc.i18n.Messages;
  * @author Paulo Perbone <pauloperbone@yahoo.com>
  * @since 0.1.0
  */
-public class Driver implements java.sql.Driver
+public final class Driver implements java.sql.Driver
 {
     /*
      * Self registration with the JDBC DriverManager.
